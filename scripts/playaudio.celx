@@ -1,0 +1,27 @@
+-- 1. Display the overlay image (Fixed Parameter Sequence)
+-- Parameters: duration, xoffset, yoffset, alpha, filename, fitscreen
+celestia:addimageoverlay(5.0, 0, 0, nil, "logo.png", false)
+
+-- 2. Play the background music
+-- Parameters: channel (0), filepath, start_offset, volume, pan, loop_boolean
+celestia:playaudio(0, "../extras/misc/ptss.mp3", 0, 1.0, 0.0, false)
+
+-- Get the observer instance for handling camera travel
+local obs = celestia:getobserver()
+
+-- 3. Fly to Sol
+local sol = celestia:find("Sol")
+celestia:select(sol)
+obs:goto(sol, 3.0, 30)
+wait(3.0)
+
+-- 4. Fly to Earth
+local earth = celestia:find("Sol/Earth")
+celestia:select(earth)
+obs:setframe(celestia:newframe("ecliptical", earth))
+obs:goto(earth, 3.0, 6.0)
+wait(2.0)
+
+-- 5. Display text message
+celestia:print("Welcome to Celestia!", 3.0, -3, 1)
+wait(3.0)

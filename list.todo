@@ -1,0 +1,15 @@
+☐ use celx (and lua) for programming
+
+☐ How to Install
+    ☐ Auto edit Config?
+
+☐ What to change
+    ☐ config
+        ☐ fonts
+        ☐ init scripts
+        ☐ logo
+    ☐ splash
+
+
+☐ Make the repo behave like a file in extras so it doesnt change the root files, but can edit the root celestia.cfg
+    ☐ Make the script to make backup cfg
